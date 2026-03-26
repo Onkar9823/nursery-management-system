@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Haven Nursery</title>
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #388E3C;
+      --accent-color: #8BC34A;
+      --text-color: #333;
+      --light-bg: #f9f9f9;
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+    
+    a:hover {
+      color: var(--secondary-color);
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .btn:hover {
+      background: purple;
+      transform: translateY(-2px);
+    }
+    
+    .section {
+      padding: 60px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: var(--secondary-color);
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: var(--text-color);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Header and Navigation */
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      width: 500px;
+      margin-right: 100px;
+    }
+    
+    .logo h1 {
+      font-size: 24px;
+      color: var(--primary-color);
+    }
+    
+    .nav-menu {
+      display: flex;
+    }
+    
+    .nav-item {
+      margin-left: 10px;
+    }
+    
+    .nav-link {
+      color: var(--text-color);
+      font-weight: 1000;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background-color: var(--accent-color);
+      color: var(--white);
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      background-image: url('https://images.pexels.com/photos/2749165/pexels-photo-2749165.jpeg?auto=compress&cs=tinysrgb&w=600');
+    }
+    
+    .hero-content {
+      max-width: 800px;
+    }
+    
+    .hero-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    
+    /* Feature Boxes */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .feature-box {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 40px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    .feature-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+    
+    /* Plant Grid */
+    .plant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .plant-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .plant-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .plant-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .plant-info {
+      padding: 20px;
+    }
+    
+    .plant-name {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .plant-price {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    /* About Section */
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .about-img {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .about-content h2 {
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+    
+    .about-content p {
+      margin-bottom: 15px;
+    }
+    
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .service-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+      font-size: 40px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    .service-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+    
+    /* Events Section */
+    .events-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .event-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    @media (min-width: 768px) {
+      .event-card {
+        flex-direction: row;
+      }
+    }
+    
+    .event-img {
+      flex: 1;
+      min-height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .event-info {
+      flex: 2;
+      padding: 20px;
+    }
+    
+    .event-date {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .event-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    
+    /* Testimonials */
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .testimonial {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      margin: 20px;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      font-weight: bold;
+      color: var(--secondary-color);
+    }
+    
+    /* Contact Form */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .contact-info h3 {
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+    
+    .contact-details {
+      margin-bottom: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+      margin-right: 15px;
+      color: var(--primary-color);
+    }
+    
+    .contact-form .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    
+    .contact-form textarea {
+      height: 150px;
+    }
+    
+    /* FAQ Section */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: var(--white);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 0 20px 20px;
+      max-height: 300px;
+    }
+    
+    /* Gallery */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    
+    .filter-btn {
+      padding: 8px 16px;
+      margin: 5px;
+      background: var(--white);
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      height: 250px;
+    }
+    
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.1);
+    }
+    
+    /* Careers */
+    .job-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .job-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    
+    .job-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .job-meta {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .job-meta span {
+      margin-right: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #444;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #444;
+      border-radius: 50%;
+      margin: 0 10px;
+      color: var(--white);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    /* Shopping Cart */
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--primary-color);
+      color: var(--white);
+      font-size: 12px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .cart-dropdown {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      width: 300px;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display: none;
+      z-index: 1001;
+    }
+    
+    .cart-dropdown.active {
+      display: block;
+    }
+    
+    .cart-item {
+      display: flex;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    
+    .cart-item-details h4 {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        flex-direction: column;
+        background: var(--white);
+        width: 80%;
+        height: calc(100vh - 80px);
+        padding: 20px;
+        transition: 0.5s;
+        box-shadow: var(--shadow);
+      }
+      
+      .nav-menu.active {
+        right: 0;
+      }
+      
+      .nav-item {
+        margin: 15px 0;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .hero-title {
+        font-size: 36px;
+      }
+      
+      .hero-subtitle {
+        font-size: 18px;
+      }
+      
+      .about-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #a5d6a7;
+    font-size: 28px;
+}
+
+h3 {
+    color: #1b5e20;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Customer Reviews Section */
+#customer-reviews .review {
+    background-color: #f1f8e9;
+    border-left: 4px solid #7cb342;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.rating {
+    color: #ffb300;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.submit-review {
+    background-color: #e8f5e9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aed581;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+/* Contact Us Section */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-info div {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f1f8e9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-form {
+    background-color: #e8f5e9;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+/* FAQ Section */
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.faq-item h3 {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f8e9;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.faq-item h3:hover {
+    background-color: #dcedc8;
+}
+
+.faq-item h3::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 24px;
+    color: #388e3c;
+}
+
+.faq-answer {
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+    
+    .contact-info div {
+        flex: 100%;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="data:image/png;base64,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" alt="Green Haven Logo">
+          <h1></h1>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="home.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="plant_catalog.html" class="nav-link">Plants</a></li>
+          <li class="nav-item"><a href="care_tips.html" class="nav-link">Care Tips</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+          <li class="nav-item"><a href="ew.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="review.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+    
+        </ul>
+        <div class="cart-icon">
+          <span>🛒</span>
+          <span class="cart-count">0</span>
+          <div class="cart-dropdown">
+            <h3>Your Cart</h3>
+            <div class="cart-items">
+              <!-- Cart items will be added dynamically -->
+            </div>
+            <div class="cart-total">
+              <span>Total:</span>
+              <span>$0.00</span>
+            </div>
+            <button class="btn">Checkout</button>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span>☰</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Page -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Welcome to Green Haven Nursery</h1>
+       
+        <p class="hero-subtitle">Your one-stop destination for premium plants and expert care</p>
+        <a href="#plants" class="btn">Explore Our Plants</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why Choose Green Haven?</h2>
+      <p class="section-subtitle">We are dedicated to providing the highest quality plants and exceptional customer service</p>
+      <div class="features">
+        <div class="feature-box">
+          <div class="feature-icon">🌱</div>
+          <h3 class="feature-title">Premium Quality Plants</h3>
+          <p>All our plants are carefully grown and selected to ensure they thrive in your home or garden.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🌿</div>
+          <h3 class="feature-title">Expert Care Advice</h3>
+          <p>Our team of plant experts is always ready to help you with personalized care tips and advice.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🚚</div>
+          <h3 class="feature-title">Safe Delivery</h3>
+          <p>We ensure your plants arrive in perfect condition with our specialized packaging and delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Page -->
+  <section id="about" class="section" style="background-color: var(--white);">
+    <div class="container">
+      <h2 class="section-title">About Green Haven</h2>
+      <div class="about-wrapper">
+        <div class="about-img">
+          <img src="https://t4.ftcdn.net/jpg/01/57/31/97/360_F_157319789_5xOotZuP9kU74MKEeZQnGHG59gERM84H.jpg" alt="Green Haven Nursery">
+        </div>
+        <div class="about-content">
+          <h2>Our Story</h2>
+          <p>Founded in 2010, Green Haven Nursery started as a small backyard passion project and has grown into one of the region's most respected plant nurseries.</p>
+          <p>Our mission is to connect people with nature by providing healthy, sustainable plants and the knowledge needed to care for them. We believe that everyone deserves to experience the joy and benefits of having plants in their lives.</p>
+          <p>At Green Haven, we practice sustainable growing methods, using organic fertilizers and natural pest control to ensure our plants are healthy for both you and the environment.</p>
+          <a href="team_info.html" class="btn">Meet Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plant Catalog -->
+  <section id="plants" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Plant Collection</h2>
+      <p class="section-subtitle">Browse our extensive selection of indoor and outdoor plants</p>
+      <div class="plant-grid">
+        <div class="plant-card">
+          <img src="https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt78239e1e4521271c/6668d549ee20f576046dca5c/4738613-Red-Roses-Hero.jpg?q=70&width=3840&auto=webp" alt="Rose" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Rose flower</h3>
+            <p class="plant-price"> ₹180.0</p>
+            <p>The Swiss Cheese Plant with iconic split leaves. Low maintenance and perfect for adding a tropical touch to any room.</p>
+            <div class="product-quantity">
+              <label for="rose-home-qty">Quantity:</label>
+              <input type="number" id="rose-home-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="rose" data-price="180.0" data-name="Rose flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://blossmcart.com/wp-content/uploads/2024/03/the-beauty-symbolism-of-sunflowers-scaled.jpg" alt="sun flower" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Sun flower</h3>
+            <p class="plant-price">₹200.0</p>
+            <p>Virtually indestructible and perfect for beginners. Purifies air and thrives in low light conditions.</p>
+            <div class="product-quantity">
+              <label for="sunflower-home-qty">Quantity:</label>
+              <input type="number" id="sunflower-home-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="sunflower" data-price="200.0" data-name="Sun flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://c1.wallpaperflare.com/preview/543/450/551/louts-bee-flower.jpg" alt="Lotus" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Lotus</h3>
+            <p class="plant-price">₹210.0</p>
+            <p>Statement plant with large, violin-shaped leaves. Adds instant designer appeal to any space.</p>
+            <div class="product-quantity">
+              <label for="lotus-home-qty">Quantity:</label>
+              <input type="number" id="lotus-home-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="lotus" data-price="210.0" data-name="Lotus">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://www.ugaoo.com/cdn/shop/articles/shutterstock_572847382.jpg?v=1661880700" alt="Mogra" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Mogra flower</h3>
+            <p class="plant-price">₹110.0</p>
+            <p>Elegant white flowers and glossy leaves. Excellent air purifier and perfect for bedrooms.</p>
+            <div class="product-quantity">
+              <label for="mogra-home-qty">Quantity:</label>
+              <input type="number" id="mogra-home-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="mogra" data-price="110.0" data-name="Mogra flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://m.media-amazon.com/images/I/61plnfhFl3L._AC_UF1000,1000_QL80_.jpg" alt="Hibiscus flower" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Hibiscus flower</h3>
+            <p class="plant-price">₹90.0</p>
+            <p>Elegant white flowers and glossy leaves. Excellent air purifier and perfect for bedrooms.</p>
+            <div class="product-quantity">
+              <label for="hibiscus-home-qty">Quantity:</label>
+              <input type="number" id="hibiscus-home-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="hibiscus" data-price="90.0" data-name="Hibiscus flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://www.flowerbulbsinc.co.uk/resize/aziatische-lelie-wit-lilium-asiaticum-1_5013765091091.png/0/1100/True/asiatic-lily-white.png" alt="Lily" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Lily flower</h3>
+            <p class="plant-price">₹100.0</p>
+            <p>Elegant white flowers and glossy leaves. Excellent air purifier and perfect for bedrooms.</p>
+            <div class="product-quantity">
+              <label for="lily-home-qty">Quantity:</label>
+              <input type="number" id="lily-home-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="lily" data-price="100.0" data-name="Lily flower">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="#shop" class="btn">View All Plants</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plant Care Tips -->
+  <section id="care" class="section" style="background-color: var(--white);">
+    <div class="container">
+      <h2 class="section-title">Plant Care Guide</h2>
+      <p class="section-subtitle">Learn how to keep your plants happy and healthy</p>
+      <div class="features">
+        <div class="feature-box">
+          <div class="feature-icon">💧</div>
+          <h3 class="feature-title">Watering Tips</h3>
+          <p>Most indoor plants prefer to dry out between waterings. Always check the soil moisture before watering and adjust based on season and environment.</p>
+          <a href="watering _tips.html" class="btn" style="margin-top: 20px;">Learn More</a>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">☀</div>
+          <h3 class="feature-title">Light Requirements</h3>
+          <p>Understanding your plant's light needs is crucial for its health. Learn to identify direct, indirect, and low light conditions in your home.</p>
+          <a href="light.html" class="btn" style="margin-top: 20px;">Learn More</a>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🌡</div>
+          <h3 class="feature-title">Temperature & Humidity</h3>
+          <p>Most houseplants thrive in temperatures between 65-75°F and appreciate humidity. Learn how to create the ideal microclimate for your plants.</p>
+          <a href="temp.html" class="btn" style="margin-top: 20px;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">We offer a range of professional services to help your plants thrive</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚚</div>
+          <h3 class="service-title">Plant Delivery</h3>
+          <p>Get your plants delivered safely to your doorstep. We use specialized packaging to ensure they arrive in perfect condition.</p>
+          <a href="plant_del.html" class="btn" style="margin-top: 20px;">Book Now</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🪴</div>
+          <h3 class="service-title">Repotting Service</h3>
+          <p>Our experts will repot your plants using premium soil mixes tailored to each plant's specific needs.</p>
+          <a href="#" class="btn" style="margin-top: 20px;">Book Now</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👩‍🌾</div>
+          <h3 class="service-title">Plant Consultation</h3>
+          <p>Get personalized advice from our plant experts on selecting and caring for plants in your specific environment.</p>
+          <a href="#" class="btn" style="margin-top: 20px;">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Online Store Page -->
+<section id="shop" class="section" style="background-color: var(--white);">
+    <div class="container">
+      <h2 class="section-title">Online Store</h2>
+      <p class="section-subtitle">Browse our carefully curated selection of plants and accessories</p>
+      
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="indoor">Indoor Plants</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor Plants</button>
+        <button class="filter-btn" data-filter="succulents">Succulents</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+      
+      <div class="plant-grid">
+        <!-- Indoor Plants -->
+        <div class="plant-card" data-category="indoor">
+          <img src="https://exoticflora.in/cdn/shop/products/AnarPomegranate_1080x.jpg?v=1499122198" alt="Pomegranate fruit plants" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Pomegranate fruit plants</h3>
+            <p class="plant-price">₹125.0</p>
+            <p>Easy-care trailing plant with beautiful heart-shaped leaves. Perfect for beginners.</p>
+            <div class="product-quantity">
+              <label for="pothos-qty">Quantity:</label>
+              <input type="number" id="pothos-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="pomegranate" data-price="125.0" data-name="Pomegranate fruit plants">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="plant-card" data-category="indoor">
+          <img src="https://cdn-hplcf.nitrocdn.com/LOlGVLgIEBtVUTuwYxsjjbJTZirHUQmS/assets/images/optimized/rev-30fb0fb/gardenhunt.com/wp-content/uploads/2022/10/Custard-apple-1-1.jpg" alt="Custard Apple" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Custard Apple</h3>
+            <p class="plant-price">₹100.0</p>
+            <p>Stunning prayer plant with large, round striped leaves. Loves humidity.</p>
+            <div class="product-quantity">
+              <label for="calathea-qty">Quantity:</label>
+              <input type="number" id="calathea-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="custard" data-price="100.0" data-name="Custard Apple">Add to Cart</button>
+          </div>
+          
+        </div>
+        
+        <!-- Outdoor Plants -->
+        <div class="plant-card" data-category="outdoor">
+          <img src="https://exoticflora.in/cdn/shop/products/1_d8f4f8dd-4491-4571-9e9a-9556c926b629.jpg?v=1620337729" alt="Banana" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Banana</h3>
+            <p class="plant-price">₹60.0</p>
+            <p>Gorgeous flowering shrub with stunning blue blooms. Perfect for gardens.</p>
+            <div class="product-quantity">
+              <label for="hydrangea-qty">Quantity:</label>
+              <input type="number" id="hydrangea-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="banana" data-price="60.0" data-name="Banana">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="plant-card" data-category="outdoor">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2025/1/483983541/GX/ZV/YO/156570729/sapodilla-fruiting-plant.jpg" alt="Chikoo" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Chikoo</h3>
+            <p class="plant-price">₹60.0</p>
+            <p>Classic climbing rose with fragrant pink blooms. Adds charm to any garden.</p>
+            <div class="product-quantity">
+              <label for="rose-qty">Quantity:</label>
+              <input type="number" id="rose-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="chikoo" data-price="60.0" data-name="Chikoo">Add to Cart</button>
+          </div>
+        </div>
+        
+        <!-- Succulents -->
+        <div class="plant-card" data-category="succulents">
+          <img src="https://www.epicgardening.com/wp-content/uploads/2024/08/beautiful-guava-tree-that-planted-in-the-garden.jpg" alt="Guava" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Guava</h3>
+            <p class="plant-price">₹70.0</p>
+            <p>Gorgeous rosette-forming succulent with pale lilac-pink leaves.</p>
+            <div class="product-quantity">
+              <label for="echeveria-qty">Quantity:</label>
+              <input type="number" id="echeveria-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="guava" data-price="70.0" data-name="Guava">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="plant-card" data-category="succulents">
+          <img src="https://www.apnikheti.com/upload/crops/1733idea99aloe-vera.png" alt="Aloe Vera" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Aloe Vera</h3>
+            <p class="plant-price">₹80.0</p>
+            <p>Medicinal plant with thick, fleshy leaves. Low maintenance and air-purifying.</p>
+            <div class="product-quantity">
+              <label for="aloe-qty">Quantity:</label>
+              <input type="number" id="aloe-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="aloe" data-price="80.0" data-name="Aloe Vera">Add to Cart</button>
+          </div>
+        </div>
+        
+        <!-- Accessories -->
+        <div class="plant-card" data-category="accessories">
+          <img src="https://dragonfruitcutting.com/wp-content/uploads/2022/02/dragon-fruit-plant-care.jpg" alt="Dragon fruit" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Dragon fruit</h3>
+            <p class="plant-price">₹200.0</p>
+            <p>Hand-crafted ceramic pot with drainage hole. Available in white, terracotta, and black.</p>
+            <div class="product-quantity">
+              <label for="pot-qty">Quantity:</label>
+              <input type="number" id="pot-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="dragonfruit" data-price="200.0" data-name="Dragon fruit">Add to Cart</button>
+          </div>
+        </div>
+        
+        <div class="plant-card" data-category="accessories">
+          <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-seed/k/z/y/120-mgf-88-african-marigold-flower-plant-orange-talz-original-imagh5akewhxvh78.jpeg?q=90&crop=false" alt="Marigold" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Marigold</h3>
+            <p class="plant-price">₹10.0</p>
+            <p>Stylish copper watering can with narrow spout for precise watering.</p>
+            <div class="product-quantity">
+              <label for="watering-can-qty">Quantity:</label>
+              <input type="number" id="watering-can-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="marigold" data-price="10.0" data-name="Marigold">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Shopping Cart -->
+    <div class="cart-summary" id="cart-summary">
+      <div class="container">
+        <h3>Your Shopping Cart</h3>
+        <div class="cart-items-container">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <!-- Cart items will be added here dynamically -->
+            </tbody>
+          </table>
+        </div>
+        <div class="cart-totals">
+          <div class="subtotal">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal">₹0.00</span>
+          </div>
+          <div class="shipping">
+            <span>Shipping:</span>
+            <span id="cart-shipping">₹0.00</span>
+          </div>
+          <div class="total">
+            <span>Total:</span>
+            <span id="cart-total">₹0.00</span>
+          </div>
+        </div>
+        <div class="checkout-buttons">
+          <button class="btn" id="checkout-btn">Proceed to Checkout</button>
+          <button class="btn" id="continue-shopping" style="background-color: #666;">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+   
+
+  </section>
+  
+  <!-- Plant Gallery Page -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Plant Gallery</h2>
+      <p class="section-subtitle">Explore our beautiful collection of plants and get inspired</p>
+      
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Plants</button>
+        <button class="filter-btn" data-filter="indoor">Indoor Plants</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor Plants</button>
+        <button class="filter-btn" data-filter="succulents">Succulents</button>
+        <button class="filter-btn" data-filter="flowering">Flowering Plants</button>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt78239e1e4521271c/6668d549ee20f576046dca5c/4738613-Red-Roses-Hero.jpg?q=70&width=3840&auto=webp" alt="Rose" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://blossmcart.com/wp-content/uploads/2024/03/the-beauty-symbolism-of-sunflowers-scaled.jpg" alt="Sun flower" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor">
+          <img src="https://exoticflora.in/cdn/shop/products/AnarPomegranate_1080x.jpg?v=1499122198" alt="Pomegranate fruit plants" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="succulents">
+          <img src="https://c1.wallpaperflare.com/preview/543/450/551/louts-bee-flower.jpg" alt="Lotus" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor flowering">
+          <img src="https://cdn-hplcf.nitrocdn.com/LOlGVLgIEBtVUTuwYxsjjbJTZirHUQmS/assets/images/optimized/rev-30fb0fb/gardenhunt.com/wp-content/uploads/2022/10/Custard-apple-1-1.jpg" alt="Custard Apple" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor">
+          <img src="https://bonnieplants.com/cdn/shop/articles/BONNIE_watermelon_iStock-181067852-1800px_28032150-26a6-4cda-be5b-c4408112e3a6.jpg?v=1642541981&width=1000" alt="watermelon" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-seed/k/z/y/120-mgf-88-african-marigold-flower-plant-orange-talz-original-imagh5akewhxvh78.jpeg?q=90&crop=false" alt="merigold" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="succulents">
+          <img src="https://www.applewoodnursery.com/wp-content/uploads/2024/05/Untitled-design-2024-05-03T135950.407.jpg" alt="apple" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor flowering">
+          <img src="https://t3.ftcdn.net/jpg/05/46/47/44/360_F_546474497_8cEeQOQVaWti47KGglLfgqJgOxycZ3wj.jpg" alt="champa" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://www.agrifarming.in/wp-content/uploads/Ultimate-Guide-to-Fig-Anjeer-Farming-3.jpg" alt="angira" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor">
+          <img src="https://dragonfruitcutting.com/wp-content/uploads/2022/02/dragon-fruit-plant-care.jpg" alt="Dragon fruit" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor flowering">
+          <img src="https://www.epicgardening.com/wp-content/uploads/2024/08/beautiful-guava-tree-that-planted-in-the-garden.jpg" alt="Guava" class="gallery-img">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ <!-- Careers Page -->
+  <section id="careers" class="section" style="background-color: var(--white);">
+    <div class="container">
+      <h2 class="section-title">Join Our Team</h2>
+      <p class="section-subtitle">Grow your career with us at Green Haven Nursery</p>
+      
+      <div class="about-wrapper" style="margin-bottom: 60px;">
+        <div class="about-img">
+          <img src="https://media.istockphoto.com/id/610131510/photo/smiling-young-gardener.jpg?s=612x612&w=0&k=20&c=aL3eZmwjD6edipIP8a7K69Osb7Esiu38nxAdfM-h6hM=" alt="Team Working at Green Haven">
+        </div>
+        <div class="about-content">
+          <h2>Why Work With Us?</h2>
+          <p>At Green Haven, we're passionate about plants and people. We believe in creating a positive work environment where team members can thrive and grow professionally.</p>
+          <p>We offer competitive salaries, ongoing training, employee discounts, and the chance to work with a team that loves what they do. Plus, you'll be surrounded by beautiful plants every day!</p>
+          <p>Our team members are the heart of our business, and we're always looking for enthusiastic individuals who share our love for plants and customer service.</p>
+        </div>
+      </div>
+      
+      <h3 style="text-align: center; margin-bottom: 30px; color: var(--secondary-color);">Current Openings</h3>
+      
+      <div class="job-list">
+        <div class="job-card">
+          <h3 class="job-title">Plant Care Specialist</h3>
+          <div class="job-meta">
+            <span>📍 Full-time</span>
+            <span>🕒 Monday-Friday</span>
+            <span>💰 Competitive Salary</span>
+          </div>
+          <p>We're looking for a knowledgeable plant enthusiast to join our plant care team. In this role, you'll be responsible for maintaining the health and appearance of our inventory, diagnosing plant issues, and providing care recommendations to customers.</p>
+          <h4 style="margin: 15px 0 10px; color: var(--secondary-color);">Requirements:</h4>
+          <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px;">
+            <li>Minimum 2 years experience in plant care or horticulture</li>
+            <li>Knowledge of common houseplants and their care needs</li>
+            <li>Ability to diagnose plant diseases and pest issues</li>
+            <li>Excellent customer service skills</li>
+            <li>Ability to lift up to 30 pounds</li>
+          </ul>
+         <div class="btn">
+          <a href="specialist.html">apply now</a>
+          </div>
+        </div>
+        
+        <div class="job-card">
+          <h3 class="job-title">Garden Center Associate</h3>
+          <div class="job-meta">
+            <span>📍 Part-time/Full-time</span>
+            <span>🕒 Flexible Hours</span>
+            <span>💰 $15-18/hour</span>
+          </div>
+          <p>Join our retail team to assist customers in finding the perfect plants for their spaces. You'll help maintain our retail area, assist with plant selections, answer care questions, and process sales transactions.</p>
+          <h4 style="margin: 15px 0 10px; color: var(--secondary-color);">Requirements:</h4>
+          <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px;">
+            <li>Retail experience preferred</li>
+            <li>Passion for plants and gardening</li>
+            <li>Strong customer service skills</li>
+            <li>Basic plant knowledge</li>
+            <li>Ability to work weekends</li>
+          </ul>
+          <div class="btn">
+            <a href="specialist.html">apply now</a>
+            </div>
+        </div>
+        
+        <div class="job-card">
+          <h3 class="job-title">E-commerce & Marketing Coordinator</h3>
+          <div class="job-meta">
+            <span>📍 Full-time</span>
+            <span>🕒 Monday-Friday</span>
+            <span>💰 Based on Experience</span>
+          </div>
+          <p>We're seeking a creative and organized individual to manage our online presence and marketing initiatives. You'll be responsible for maintaining our website, managing online orders, creating content for social media, and developing marketing campaigns.</p>
+          <h4 style="margin: 15px 0 10px; color: var(--secondary-color);">Requirements:</h4>
+          <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px;">
+            <li>Experience with e-commerce platforms (Shopify preferred)</li>
+            <li>Social media management experience</li>
+            <li>Basic photography skills</li>
+            <li>Strong written communication</li>
+            <li>Knowledge or interest in plants a plus</li>
+          </ul>
+          <div class="btn">
+            <a href="specialist.html">apply now</a>
+            </div>        
+      </div>
+      
+      <div style="margin-top: 50px; background: var(--light-bg); padding: 40px; border-radius: 8px;">
+        <h3 style="text-align: center; margin-bottom: 30px; color: var(--secondary-color);">Application Form</h3>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="job-name">Full Name</label>
+            <input type="text" id="job-name" required>
+          </div>
+          <div class="form-group">
+            <label for="job-email">Email</label>
+            <input type="email" id="job-email" required>
+          </div>
+          <div class="form-group">
+            <label for="job-phone">Phone</label>
+            <input type="tel" id="job-phone" required>
+          </div>
+          <div class="form-group">
+            <label for="job-position">Position of Interest</label>
+            <select id="job-position" required>
+              <option value="">Select a position</option>
+              <option value="plant-care">Plant Care Specialist</option>
+              <option value="garden-associate">Garden Center Associate</option>
+              <option value="ecommerce">E-commerce & Marketing Coordinator</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="job-resume">Upload Resume (PDF)</label>
+            <input type="file" id="job-resume" accept=".pdf" required>
+          </div>
+          <div class="form-group">
+            <label for="job-message">Cover Letter / Additional Information</label>
+            <textarea id="job-message" rows="5"></textarea>
+          </div>
+         <a href="application.html" class="btn">submit Application</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Events & Workshops Page -->
+  <section id="events" class="section">
+    <div class="container">
+      <h2 class="section-title">Events & Workshops</h2>
+      <p class="section-subtitle">Join us for educational and inspirational plant-related experiences</p>
+      
+      <div class="events-list">
+        <div class="event-card">
+          <div class="event-img" style="background-image: url('https://images.squarespace-cdn.com/content/v1/57dcb9d4d2b857cdadff1630/1519192350776-ULS1KLBQ0JWWBBCC305U/Succulent+Workshops');"></div>
+          <div class="event-info">
+            <p class="event-date">June 15, 2025 | 10:00 AM - 12:00 PM</p>
+            <h3 class="event-title">Succulent Arrangement Workshop</h3>
+            <p>Learn how to create stunning succulent arrangements in this hands-on workshop. We'll cover design principles, care requirements, and each participant will take home their own beautiful arrangement.</p>
+            <p><strong>Price:</strong> $45 (includes all materials)</p>
+            <p><strong>Location:</strong> Green Haven Workshop Room</p>
+            <button class="btn" style="margin-top: 15px;">Register Now</button>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-img" style="background-image: url('https://www.provenwinners.com/sites/provenwinners.com/files/2019/images/1_0.jpg');"></div>
+          <div class="event-info">
+            <p class="event-date">June 22, 2025 | 2:00 PM - 3:30 PM</p>
+            <h3 class="event-title">Houseplant Care Basics</h3>
+            <p>Perfect for beginners! This free workshop covers essential care tips for common houseplants, including watering, light requirements, fertilizing, and troubleshooting common issues.</p>
+            <p><strong>Price:</strong> Free (Registration required)</p>
+            <p><strong>Location:</strong> Green Haven Workshop Room</p>
+            <button class="btn" style="margin-top: 15px;">Register Now</button>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-img" style="background-image: url('https://images-r2-1.thebrag.com/tb/uploads/2018/06/34087897_645943832419346_5576410001813012480_n.jpg');"></div>
+          <div class="event-info">
+            <p class="event-date">July 8, 2025 | 6:00 PM - 8:00 PM</p>
+            <h3 class="event-title">Terrarium Building Night</h3>
+            <p>Join us for a fun evening of terrarium building! Learn how to create a self-sustaining miniature ecosystem while enjoying refreshments. All materials and plants included.</p>
+            <p><strong>Price:</strong> $55 (includes all materials and refreshments)</p>
+            <p><strong>Location:</strong> Green Haven Workshop Room</p>
+            <button class="btn" style="margin-top: 15px;">Register Now</button>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-img" style="background-image: url('https://img.freepik.com/free-vector/summer-sale-background-with-plants-realistic-style_23-2147834196.jpg');"></div>
+          <div class="event-info">
+            <p class="event-date">July 20, 2025 | 9:00 AM - 1:00 PM</p>
+            <h3 class="event-title">Summer Plant Sale</h3>
+            <p>Our biggest sale of the season! Enjoy 20-50% off select plants and accessories, plus free mini-workshops throughout the day on plant care topics.</p>
+            <p><strong>Price:</strong> Free Entry</p>
+            <p><strong>Location:</strong> Green Haven Nursery Main Area</p>
+            <button class="btn" style="margin-top: 15px;">Add to Calendar</button>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 50px; background: var(--light-bg); padding: 40px; border-radius: 8px;">
+        <h3 style="text-align: center; margin-bottom: 30px; color: var(--secondary-color);">Workshop Registration</h3>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="event-name">Full Name</label>
+            <input type="text" id="event-name" required>
+          </div>
+          <div class="form-group">
+            <label for="event-email">Email</label>
+            <input type="email" id="event-email" required>
+          </div>
+          <div class="form-group">
+            <label for="event-phone">Phone</label>
+            <input type="tel" id="event-phone" required>
+          </div>
+          <div class="form-group">
+            <label for="event-select">Select Event</label>
+            <select id="event-select" required>
+              <option value="">Choose an event</option>
+              <option value="succulent">Succulent Arrangement Workshop (June 15)</option>
+              <option value="basics">Houseplant Care Basics (June 22)</option>
+              <option value="terrarium">Terrarium Building Night (July 8)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="event-participants">Number of Participants</label>
+            <input type="number" id="event-participants" min="1" max="10" value="1" required>
+          </div>
+          <div class="form-group">
+            <label for="event-message">Special Requests or Questions</label>
+            <textarea id="event-message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn">Complete Registration</button>
+        </form>
+      </div>
+    </div>
+  </section>
+ <!-- Customer Reviews Section -->
+ <section id="reviews">
+    <h2>Customer Reviews</h2>
+    
+    <div class="review">
+        <h3>Samir Sonawane</h3>
+        <div class="rating">
+            <span>★★★★★</span>
+        </div>
+        <p>The green haven nursury's plants are so fresh and good. Highly recommended!</p>
+    </div>
+    
+    <div class="review">
+        <h3>Prajwal Gorde</h3>
+        <div class="rating">
+            <span>★★★★☆</span>
+        </div>
+        <p>Great Nursury for Small plants of fruits. The customer management features have helped us increase repeat business by 30%. Would love to see more reporting features in future updates.</p>
+    </div>
+    
+    <div class="review">
+        <h3>Onkar Wakchaure</h3>
+        <div class="rating">
+            <span>★★★★★</span>
+        </div>
+        <p>As a nursery manager, I appreciate how easy it is to train new staff on this system. The plant care reminders have reduced our plant loss significantly. Worth every penny!</p>
+    </div>
+    
+    <div class="submit-review">
+        <h3>Leave Your Review</h3>
+        <form id="review-form">
+            <div>
+                <label for="reviewer-name">Your Name:</label>
+                <input type="text" id="reviewer-name" name="reviewer-name" required>
+            </div>
+            
+            <div>
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+</section>
+<!-- Contact Us Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    
+    <div class="contact-info">
+        <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+            <p>Saturday: 9:00 AM - 5:00 PM</p>
+            <p>Sunday: 10:00 AM - 3:00 PM</p>
+        </div>
+        
+        <div>
+            <h3>Contact Information</h3>
+            <p>Phone: 9356167977</p>
+            <p>Email: sybca@greenhavennursery.com</p>
+            <p>Address: 123 Green Street, Plantville, PL 12345</p>
+        </div>
+    </div>
+    
+    <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form">
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div>
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="customer-support">Customer Support</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="technical">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit">Send Message</button>
+ <!-- FAQ Section -->
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+        <h3>What is a Nursery Management System?</h3>
+        <div class="faq-answer">
+            <p>A Nursery Management System is a software solution designed to help plant nurseries organize and optimize their operations, including inventory management, plant care scheduling, customer relationship management, sales tracking, and reporting.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>How does the plant tracking feature work?</h3>
+        <div class="faq-answer">
+            <p>Our plant tracking feature allows you to maintain detailed records for each plant in your inventory, including species information, growth stage, watering and fertilization schedules, location within the nursery, and health status. You can also track plants from seed to sale with our batch management system.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Can I manage multiple nursery locations with this system?</h3>
+        <div class="faq-answer">
+            <p>Yes! Our system supports multi-location management, allowing you to track inventory, sales, and staff across different physical locations. Each location can have its own dashboard and reporting, while still providing consolidated data for management.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Is there a mobile app available?</h3>
+        <div class="faq-answer">
+            <p>Yes, we offer mobile applications for both iOS and Android devices. The mobile apps allow your staff to update plant information, process sales, and receive care reminders while moving throughout the nursery, without needing to return to a desktop computer.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>How secure is my customer and business data?</h3>
+        <div class="faq-answer">
+            <p>We take data security very seriously. All data is encrypted both in transit and at rest. We use industry-standard security protocols, regular security audits, and maintain compliance with data protection regulations. Your business and customer information is backed up daily.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Do you offer integration with accounting software?</h3>
+        <div class="faq-answer">
+            <p>Yes, our system integrates with popular accounting software solutions including QuickBooks, Xero, and Sage. This allows for seamless transfer of sales data, inventory valuations, and purchase orders between systems.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>What kind of customer support do you provide?</h3>
+        <div class="faq-answer">
+            <p>We provide 24/7 email support, phone support during business hours, and an extensive knowledge base with video tutorials. Our Premium and Enterprise plans also include dedicated account managers and priority support.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Can I try the system before purchasing?</h3>
+        <div class="faq-answer">
+            <p>Absolutely! We offer a 30-day free trial with full access to all features. No credit card is required to start your trial. We also provide a demo session with our team to help you get started and answer any questions you might have.</p>
+        </div>
+    </div>
+</section>
+<script src="cart.js"></script>
+</body>
+</html>
