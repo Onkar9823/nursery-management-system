@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plant Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plant-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .plant-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .plant-card p {
+            font-size: 1.1rem;
+            padding: 15px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .plant-card p:hover {
+            background-color: #e0f7fa;
+            color: #00796b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plant Gallery</h1>
+    </header>
+
+    <section class="gallery">
+        <div class="plant-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLm27OOcof-Fp1BqVxYizyHoW8IdiIUt3nQ&s" alt="Aloe Vera">
+            <p>Aloe Vera</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://plantorbit.com/cdn/shop/files/Opuntia_Microdasys_Var._Pallida_BUNNY_EAR_CACTUS_YELLOW_BARE_ROOTED.webp?v=1731762238&width=533" alt="Cactus">
+            <p>Cactus</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://rukminim3.flixcart.com/image/850/1000/xif0q/plant-sapling/q/x/z/yes-annual-yes-hybrid-bamboo-bass-14-small-1-grow-bag-kumubon-original-imah3avq29t5ufze.jpeg?q=90&crop=false" alt="Bamboo">
+            <p>Bamboo</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/russian-mammoth-sunflower-types-1586794669.jpg?crop=1xw:0.8333333333333334xh;center,top" alt="Sunflower">
+            <p>Sunflower</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://cdn.britannica.com/21/6821-050-AE82E5BF/Bracken.jpg" alt="Fern">
+            <p>Fern</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqPdthCy6TM4p_ArON_VBnFdC1n188U68Iw&s" alt="Orchid">
+            <p>Orchid</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://img.freepik.com/free-photo/closeup-shot-red-rose-with-dew-top-black_181624-28079.jpg?semt=ais_hybrid&w=740&q=80" alt="Rose">
+            <p>Rose</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://media.istockphoto.com/id/828319030/photo/beautiful-tupil-flowers.jpg?s=1024x1024&w=is&k=20&c=cUrXzabp8wz-_9-l6rZofJQQ2ix4WzYAashp5PDdWpo=" alt="Tulip">
+            <p>Tulip</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-seed/y/a/e/80-lavnher-k231-moofga-original-imaghnbnzxhz3hmw.jpeg?q=90&crop=false" alt="Lavender">
+            <p>Lavender</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://www.floraly.com.au/cdn/shop/articles/daffodils_blog_hero.png?v=1663224190" alt="Daffodil">
+            <p>Daffodil</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://housing.com/news/wp-content/uploads/2022/10/POTHOS-PLANT-FEATURE-compressed.jpg" alt="Pothos">
+            <p>Pothos</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://m.media-amazon.com/images/I/51n0fa4c-iL.jpg" alt="Jade Plant">
+            <p>Jade Plant</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSakG2xnV6QeBFUFLUZP7LV1nRyuK61g3lECQ&s" alt="Spider Plant">
+            <p>Spider Plant</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://nurserylive.com/cdn/shop/products/nurserylive-g-ficus-benjamina-weeping-fig-plant-204240_512x512.jpg?v=1679750033" alt="Ficus">
+            <p>Ficus</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://m.media-amazon.com/images/I/51VU7-hQWiL.jpg" alt="Peace Lily">
+            <p>Peace Lily</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://b3261022.smushcdn.com/3261022/wp-content/uploads/2023/03/Blue-African-Violet-1024x1024.jpg?lossy=1&strip=1&webp=1" alt="African Violet">
+            <p>African Violet</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://www.padmamnursery.com/cdn/shop/files/growing-chrysanthemum-02-_1.jpg?v=1728318433" alt="Chrysanthemum">
+            <p>Chrysanthemum</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Bx8oekJ-6iNpAFvvyBWE0Cy6A57lF6Nx1Q&s" alt="Calathea">
+            <p>Calathea</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://m.media-amazon.com/images/I/91b837YE8zL.jpg" alt="Bougainvillea">
+            <p>Bougainvillea</p>
+        </div>
+        <div class="plant-card">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/12/PY/LC/UU/126864089/lemon-tree.jpg" alt="Lemon Tree">
+            <p>Lemon Tree</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Green Haven Nursury. All Right reserved.</p>
+    </footer>
+</body>
+</html>

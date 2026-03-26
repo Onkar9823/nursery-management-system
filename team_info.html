@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Nursery Management - Team</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #2e8b57;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Team Section */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+            margin-bottom: 50px;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.6em;
+            margin: 10px 0;
+            color: #2e8b57;
+            font-weight: 600;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        footer p {
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meet Our Plant Nursery Management Team</h1>
+        <p>We take care of plants and provide the best nursery services.</p>
+    </header>
+
+    <section class="team-container">
+        <div class="team-member">
+            <img src="samir.jpg" alt="Samir Sonawane">
+            <h3>Samir Sonawane</h3>
+            <p>Nursery Manager</p>
+            <p>Samir oversees the entire nursery, ensuring plants are well taken care of and operations run smoothly.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="onkar.jpg" alt="Onkar Wakchaure">
+            <h3>Onkar Wakchaure</h3>
+            <p>Plant Specialist</p>
+            <p>onakr is an expert in plant care and ensures the best growth conditions for each plant species.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="prjwal.jpg" alt="Prajwal Gorde">
+            <h3>Prajwal Gorde</h3>
+            <p>Soil and Fertilizer Expert</p>
+            <p>Prajwal makes sure that all plants receive the correct soil and nutrients for healthy growth.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="harshad.jpg" alt="Harshad Waman">
+            <h3>Harshad Waman</h3>
+            <p>Watering Specialist</p>
+            <p>Harshad ensures that all plants receive adequate water, maintaining hydration and preventing over-watering.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="shubham.jpg" alt="Shubham Talekar">
+            <h3>Shubham Talekar</h3>
+            <p>Greenhouse Supervisor</p>
+            <p>Shubham supervises the greenhouse environment, ensuring temperature and humidity are ideal for plant growth.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="person6.jpg" alt="Pratik More">
+            <h3>Pratik More</h3>
+            <p>Customer Relations</p>
+            <p>Pratik is the point of contact for customers, helping them choose the best plants for their needs.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Plant Nursery Management. All rights reserved.</p>
+    </footer>
+</body>
+</html>

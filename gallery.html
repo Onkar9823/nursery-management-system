@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Plant Gallery Page -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Plant Gallery</h2>
+      <p class="section-subtitle">Explore our beautiful collection of plants and get inspired</p>
+      
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Plants</button>
+        <button class="filter-btn" data-filter="indoor">Indoor Plants</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor Plants</button>
+        <button class="filter-btn" data-filter="succulents">Succulents</button>
+        <button class="filter-btn" data-filter="flowering">Flowering Plants</button>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt78239e1e4521271c/6668d549ee20f576046dca5c/4738613-Red-Roses-Hero.jpg?q=70&width=3840&auto=webp" alt="Rose" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://blossmcart.com/wp-content/uploads/2024/03/the-beauty-symbolism-of-sunflowers-scaled.jpg" alt="Sun flower" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor">
+          <img src="https://exoticflora.in/cdn/shop/products/AnarPomegranate_1080x.jpg?v=1499122198" alt="Pomegranate fruit plants" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="succulents">
+          <img src="https://c1.wallpaperflare.com/preview/543/450/551/louts-bee-flower.jpg" alt="Lotus" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor flowering">
+          <img src="https://cdn-hplcf.nitrocdn.com/LOlGVLgIEBtVUTuwYxsjjbJTZirHUQmS/assets/images/optimized/rev-30fb0fb/gardenhunt.com/wp-content/uploads/2022/10/Custard-apple-1-1.jpg" alt="Custard Apple" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRapLOuhG8m3FyuVJUAWxOVGdqC1kxcLwLUyw&s" alt="watermelon" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-seed/k/z/y/120-mgf-88-african-marigold-flower-plant-orange-talz-original-imagh5akewhxvh78.jpeg?q=90&crop=false" alt="merigold" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="succulents">
+          <img src="https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/healing_foods_slideshow/1800ss_getty_rf_apples.jpg?resize=750px:*&output-quality=75" alt="apple" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor flowering">
+          <img src="https://t3.ftcdn.net/jpg/05/46/47/44/360_F_546474497_8cEeQOQVaWti47KGglLfgqJgOxycZ3wj.jpg" alt="champa" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor">
+          <img src="https://www.agrifarming.in/wp-content/uploads/Ultimate-Guide-to-Fig-Anjeer-Farming-3.jpg" alt="angira" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="outdoor">
+          <img src="https://dragonfruitcutting.com/wp-content/uploads/2022/02/dragon-fruit-plant-care.jpg" alt="Dragon fruit" class="gallery-img">
+        </div>
+        <div class="gallery-item" data-category="indoor flowering">
+          <img src="https://www.epicgardening.com/wp-content/uploads/2024/08/beautiful-guava-tree-that-planted-in-the-garden.jpg" alt="Guava" class="gallery-img">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Filter Functionality Script -->
+  <script>
+    // Get all filter buttons and gallery items
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Add click event listener to each filter button
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const selectedFilter = this.getAttribute('data-filter');
+
+        // Remove active class from all buttons and add to clicked button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show/hide gallery items based on filter
+        galleryItems.forEach(item => {
+          if (selectedFilter === 'all') {
+            // Show all items
+            item.style.display = 'block';
+          } else {
+            // Show only items matching the selected category
+            const itemCategories = item.getAttribute('data-category');
+            // Check if the selected filter is in the item's categories (handles multiple categories)
+            if (itemCategories.includes(selectedFilter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

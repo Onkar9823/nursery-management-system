@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Requirements for Plants</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    /* Container Styling */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #3d8c3d;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    /* Main Content Styling */
+    main {
+      padding: 50px 0;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: -40px;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #3d8c3d;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    /* Light Requirements List */
+    .light-requirements {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .light-item {
+      background-color: #e8f5e9;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .light-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .light-item h3 {
+      font-size: 1.5rem;
+      color: #2c6a4f;
+      margin-bottom: 15px;
+    }
+
+    .light-item p {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 0;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #3d8c3d;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+      border-radius: 8px;
+    }
+
+    footer p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* Responsive Media Query */
+    @media (max-width: 768px) {
+      .light-item {
+        width: 45%;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .light-item {
+        width: 100%;
+      }
+
+      section p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Light Requirements for Plants</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Why is Light Important for Plants?</h2>
+      <p>Light is essential for plants as it helps in the process of photosynthesis, which is how they produce their food. Different plants have different light requirements. While some thrive in direct sunlight, others prefer indirect light. It's important to understand the needs of your plants to ensure their growth and health.</p>
+    </section>
+
+    <section>
+      <h2>Types of Light Requirements</h2>
+      <div class="light-requirements">
+        <div class="light-item">
+          <h3>Full Sun</h3>
+          <p>Plants that require full sun need at least 6 hours of direct sunlight each day. These plants are typically sun-loving species such as succulents and most flowering plants.</p>
+        </div>
+        <div class="light-item">
+          <h3>Partial Sun/Partial Shade</h3>
+          <p>These plants require 3 to 6 hours of sunlight. They are suited for areas with some shade throughout the day. Examples include many vegetables and herbs.</p>
+        </div>
+        <div class="light-item">
+          <h3>Indirect Light</h3>
+          <p>Plants that thrive in indirect light need bright but filtered sunlight, often through a curtain or in a shaded area. These include many indoor plants such as ferns and snake plants.</p>
+        </div>
+        <div class="light-item">
+          <h3>Low Light</h3>
+          <p>Low light plants do not need direct sunlight and can survive with minimal light. They are ideal for rooms with limited natural sunlight, such as offices. Examples include peace lilies and pothos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Green Leaf Nursury. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

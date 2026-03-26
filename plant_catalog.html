@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+        <div class="cart-icon">
+          <span>🛒</span>
+          <span class="cart-count">0</span>
+          <div class="cart-dropdown">
+            <h3>Your Cart</h3>
+            <div class="cart-items">
+              <!-- Cart items will be added dynamically -->
+            </div>
+            <div class="cart-total">
+              <span>Total:</span>
+              <span>$0.00</span>
+            </div>
+            <button class="btn">Checkout</button>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span>☰</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+      <!-- Plant Catalog -->
+  <section id="plants" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Plant Collection</h2>
+      <p class="section-subtitle">Browse our extensive selection of indoor and outdoor plants</p>
+      <div class="plant-grid">
+        <div class="plant-card">
+          <img src="https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt78239e1e4521271c/6668d549ee20f576046dca5c/4738613-Red-Roses-Hero.jpg?q=70&width=3840&auto=webp" alt="Rose" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Rose flower</h3>
+            <p class="plant-price"> ₹180.0</p>
+            <p>The Swiss Cheese Plant with iconic split leaves. Low maintenance and perfect for adding a tropical touch to any room.</p>
+            <div class="product-quantity">
+              <label for="rose-qty">Quantity:</label>
+              <input type="number" id="rose-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="rose" data-price="180.0" data-name="Rose flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://blossmcart.com/wp-content/uploads/2024/03/the-beauty-symbolism-of-sunflowers-scaled.jpg" alt="sun flower" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Sun flower</h3>
+            <p class="plant-price">₹200.0</p>
+            <p>Virtually indestructible and perfect for beginners. Purifies air and thrives in low light conditions.</p>
+            <div class="product-quantity">
+              <label for="sunflower-qty">Quantity:</label>
+              <input type="number" id="sunflower-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="sunflower" data-price="200.0" data-name="Sun flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://c1.wallpaperflare.com/preview/543/450/551/louts-bee-flower.jpg" alt="Lotus" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Lotus</h3>
+            <p class="plant-price">₹210.0</p>
+            <p>Statement plant with large, violin-shaped leaves. Adds instant designer appeal to any space.</p>
+            <div class="product-quantity">
+              <label for="lotus-qty">Quantity:</label>
+              <input type="number" id="lotus-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="lotus" data-price="210.0" data-name="Lotus">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://www.ugaoo.com/cdn/shop/articles/shutterstock_572847382.jpg?v=1661880700" alt="Mogra" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Mogra flower</h3>
+            <p class="plant-price">₹110.0</p>
+            <p>Elegant white flowers and glossy leaves. Excellent air purifier and perfect for bedrooms.</p>
+            <div class="product-quantity">
+              <label for="mogra-qty">Quantity:</label>
+              <input type="number" id="mogra-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="mogra" data-price="110.0" data-name="Mogra flower">Add to Cart</button>
+            
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://m.media-amazon.com/images/I/61plnfhFl3L._AC_UF1000,1000_QL80_.jpg" alt="Hibiscus flower" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Hibiscus flower</h3>
+            <p class="plant-price">₹90.0</p>
+            <p>Elegant white flowers and glossy leaves. Excellent air purifier and perfect for bedrooms.</p>
+            <div class="product-quantity">
+              <label for="hibiscus-qty">Quantity:</label>
+              <input type="number" id="hibiscus-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="hibiscus" data-price="90.0" data-name="Hibiscus flower">Add to Cart</button>
+          </div>
+        </div>
+        <div class="plant-card">
+          <img src="https://www.flowerbulbsinc.co.uk/resize/aziatische-lelie-wit-lilium-asiaticum-1_5013765091091.png/0/1100/True/asiatic-lily-white.png" alt="Lily" class="plant-img">
+          <div class="plant-info">
+            <h3 class="plant-name">Lily flower</h3>
+            <p class="plant-price">₹100.0</p>
+            <p>Elegant white flowers and glossy leaves. Excellent air purifier and perfect for bedrooms.</p>
+            <div class="product-quantity">
+              <label for="lily-qty">Quantity:</label>
+              <input type="number" id="lily-qty" value="1" min="1" max="10">
+            </div>
+            <button class="btn add-to-cart" data-id="lily" data-price="100.0" data-name="Lily flower">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="all_plants.html" class="btn">View All Plants</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Cart JavaScript -->
+  <script src="cart.js"></script>
+</body>
+</html>

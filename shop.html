@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add some styles for the popup */
+        #popup {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="cart-icon">
+          <span>🛒</span>
+          <span class="cart-count">0</span>
+          <div class="cart-dropdown">
+            <h3>Your Cart</h3>
+            <div class="cart-items">
+              <!-- Cart items will be added dynamically -->
+            </div>
+            <div class="cart-total">
+              <span>Total:</span>
+              <span>$0.00</span>
+            </div>
+            <button class="btn">Checkout</button>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span>☰</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Online Store Page -->
+<section id="shop" class="section" style="background-color: var(--white);">
+  <div class="container">
+    <h2 class="section-title">Online Store</h2>
+    <p class="section-subtitle">Browse our carefully curated selection of plants and accessories</p>
+    
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All Products</button>
+      <button class="filter-btn" data-filter="indoor">Indoor Plants</button>
+      <button class="filter-btn" data-filter="outdoor">Outdoor Plants</button>
+      <button class="filter-btn" data-filter="succulents">Succulents</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+    </div>
+    
+    <div class="plant-grid">
+      <!-- Indoor Plants -->
+      <div class="plant-card" data-category="indoor">
+        <img src="https://exoticflora.in/cdn/shop/products/AnarPomegranate_1080x.jpg?v=1499122198" alt="Pomegranate fruit plants" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Pomegranate fruit plants</h3>
+          <p class="plant-price">₹125.0</p>
+          <p>Easy-care trailing plant with beautiful heart-shaped leaves. Perfect for beginners.</p>
+          <div class="product-quantity">
+            <label for="pothos-qty">Quantity:</label>
+            <input type="number" id="pothos-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="pomegranate" data-price="125.0" data-name="Pomegranate fruit plants">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="plant-card" data-category="indoor">
+        <img src="https://cdn-hplcf.nitrocdn.com/LOlGVLgIEBtVUTuwYxsjjbJTZirHUQmS/assets/images/optimized/rev-30fb0fb/gardenhunt.com/wp-content/uploads/2022/10/Custard-apple-1-1.jpg" alt="Custard Apple" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Custard Apple</h3>
+          <p class="plant-price">₹100.0</p>
+          <p>Stunning prayer plant with large, round striped leaves. Loves humidity.</p>
+          <div class="product-quantity">
+            <label for="calathea-qty">Quantity:</label>
+            <input type="number" id="calathea-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="custard" data-price="100.0" data-name="Custard Apple">Add to Cart</button>
+        </div>
+        
+      </div>
+      
+      <!-- Outdoor Plants -->
+      <div class="plant-card" data-category="outdoor">
+        <img src="https://exoticflora.in/cdn/shop/products/1_d8f4f8dd-4491-4571-9e9a-9556c926b629.jpg?v=1620337729" alt="Banana" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Banana</h3>
+          <p class="plant-price">₹60.0</p>
+          <p>Gorgeous flowering shrub with stunning blue blooms. Perfect for gardens.</p>
+          <div class="product-quantity">
+            <label for="hydrangea-qty">Quantity:</label>
+            <input type="number" id="hydrangea-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="banana" data-price="60.0" data-name="Banana">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="plant-card" data-category="outdoor">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2025/1/483983541/GX/ZV/YO/156570729/sapodilla-fruiting-plant.jpg" alt="Chikoo" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Chikoo</h3>
+          <p class="plant-price">₹60.0</p>
+          <p>Classic climbing rose with fragrant pink blooms. Adds charm to any garden.</p>
+          <div class="product-quantity">
+            <label for="rose-qty">Quantity:</label>
+            <input type="number" id="rose-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="chikoo" data-price="60.0" data-name="Chikoo">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Succulents -->
+      <div class="plant-card" data-category="succulents">
+        <img src="https://www.epicgardening.com/wp-content/uploads/2024/08/beautiful-guava-tree-that-planted-in-the-garden.jpg" alt="Guava" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Guava</h3>
+          <p class="plant-price">₹70.0</p>
+          <p>Gorgeous rosette-forming succulent with pale lilac-pink leaves.</p>
+          <div class="product-quantity">
+            <label for="echeveria-qty">Quantity:</label>
+            <input type="number" id="echeveria-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="guava" data-price="70.0" data-name="Guava">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="plant-card" data-category="succulents">
+        <img src="https://www.apnikheti.com/upload/crops/1733idea99aloe-vera.png" alt="Aloe Vera" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Aloe Vera</h3>
+          <p class="plant-price">₹80.0</p>
+          <p>Medicinal plant with thick, fleshy leaves. Low maintenance and air-purifying.</p>
+          <div class="product-quantity">
+            <label for="aloe-qty">Quantity:</label>
+            <input type="number" id="aloe-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="aloe" data-price="80.0" data-name="Aloe Vera">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Accessories -->
+      <div class="plant-card" data-category="accessories">
+        <img src="https://dragonfruitcutting.com/wp-content/uploads/2022/02/dragon-fruit-plant-care.jpg" alt="Dragon fruit" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Dragon fruit</h3>
+          <p class="plant-price">₹200.0</p>
+          <p>Hand-crafted ceramic pot with drainage hole. Available in white, terracotta, and black.</p>
+          <div class="product-quantity">
+            <label for="pot-qty">Quantity:</label>
+            <input type="number" id="pot-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="dragonfruit" data-price="200.0" data-name="Dragon fruit">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="plant-card" data-category="accessories">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/plant-seed/k/z/y/120-mgf-88-african-marigold-flower-plant-orange-talz-original-imagh5akewhxvh78.jpeg?q=90&crop=false" alt="Marigold" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Marigold</h3>
+          <p class="plant-price">₹10.0</p>
+          <p>Stylish copper watering can with narrow spout for precise watering.</p>
+          <div class="product-quantity">
+            <label for="marigold-qty">Quantity:</label>
+            <input type="number" id="marigold-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="marigold" data-price="10.0" data-name="Marigold">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="plant-card" data-category="accessories">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5gwEx3zDNwXP_S4IjGhs24liH0Gc0IcUqSQ&s" alt="Mango" class="plant-img">
+        <div class="plant-info">
+          <h3 class="plant-name">Mango</h3>
+          <p class="plant-price">₹100.0</p>
+          <p>Stylish copper watering can with narrow spout for precise watering.</p>
+          <div class="product-quantity">
+            <label for="mango-qty">Quantity:</label>
+            <input type="number" id="mango-qty" value="1" min="1" max="10">
+          </div>
+          <button class="btn add-to-cart" data-id="mango" data-price="100.0" data-name="Mango">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <!-- Add more plant cards here as needed -->
+
+    </div>
+  </div>
+
+    <!-- Cart JavaScript -->
+    <script src="cart.js"></script>
+
+    <!-- Filter Functionality Script -->
+    <script>
+        // Get all filter buttons and plant cards
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const plantCards = document.querySelectorAll('.plant-card');
+
+        // Add click event listener to each filter button
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const selectedFilter = this.getAttribute('data-filter');
+
+                // Remove active class from all buttons and add to clicked button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show/hide plant cards based on filter
+                plantCards.forEach(card => {
+                    if (selectedFilter === 'all') {
+                        // Show all cards
+                        card.style.display = 'block';
+                    } else {
+                        // Show only cards matching the selected category
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory === selectedFilter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

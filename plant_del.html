@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now - Plant Delivery</title>
+<style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  padding: 30px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Booking Form Section */
+#booking-form {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+footer p {
+  margin: 0;
+}
+/* Notification Popup Styles */
+.notification {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: auto;
+  text-align: center;
+}
+
+/* Notification Popup Styles */
+.notification {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 20px; /* 20px from the top of the page */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lightblue; /* Green background */
+  color: white;
+  padding: 20px 40px; /* More padding for better spacing */
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: auto;
+  text-align: center;
+  opacity: 0; /* Start hidden, will fade in */
+  animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 4.5s forwards; /* Smooth fade-in and fade-out */
+}
+
+.notification p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Fade-out effect */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+.notification.success {
+  background-color: #4CAF50; /* Green background for success */
+}
+
+.notification.error {
+  background-color: #f44336; /* Red background for errors */
+}
+
+.notification.warning {
+  background-color: #ff9800; /* Orange background for warnings */
+}
+
+.notification.info {
+  background-color: #2196F3; /* Blue background for info messages */
+}
+
+/* Optional: Add hover effect for the popup */
+.notification:hover {
+  cursor: pointer;
+  opacity: 0.9; /* Slight opacity change on hover */
+}
+
+
+
+</style>
+</head>
+<body>
+   
+      <!-- Header -->
+      <header>
+        <h1>Book Your Plant Delivery</h1>
+        <p>Fill in your details to complete your order.</p>
+      </header>
+    
+      <!-- Booking Form Section -->
+      <section id="booking-form" class="section">
+        <div class="container">
+          <form id="bookingForm" action="#" method="POST" class="form">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+              <label for="gmail">Gmail</label>
+              <input type="email" id="gmail" name="gmail" required placeholder="Enter your Gmail address">
+            </div>
+            
+            <div class="form-group">
+              <label for="plant-name">Plant Name</label>
+              <input type="text" id="plant-name" name="plant-name" required placeholder="Enter the plant name">
+            </div>
+    
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" required placeholder="Enter your address"></textarea>
+            </div>
+    
+            <div class="form-group">
+              <label for="landmark">Nearby Landmark</label>
+              <input type="text" id="landmark" name="landmark" required placeholder="Enter nearby landmark">
+            </div>
+    
+            <button type="submit" class="btn">Submit Booking</button>
+          </form>
+        </div>
+      </section>
+    
+      <!-- Success Notification Popup -->
+      <div id="successNotification" class="notification">
+        <p>Your booking is complete! Your plant will be delivered soon.</p>
+      </div>
+    
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025  Green Leaf Nursury. All Rights Reserved.</p>
+      </footer>
+    
+      <!-- JavaScript -->
+      <script>
+        // Get elements
+        const form = document.getElementById('bookingForm');
+        const notification = document.getElementById('successNotification');
+    
+        // Show success notification on form submission
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission to show the notification
+    
+          // Show the notification
+          notification.style.display = 'block';
+    
+          // Hide the notification after 5 seconds
+          setTimeout(function() {
+            notification.style.display = 'none';
+          }, 10000);
+        });
+      </script>
+    </body>
+    </html>
+    
+</body>
+</html>

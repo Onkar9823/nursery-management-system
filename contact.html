@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contact Us Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    
+    <div class="contact-info">
+        <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+            <p>Saturday: 9:00 AM - 5:00 PM</p>
+            <p>Sunday: 10:00 AM - 3:00 PM</p>
+        </div>
+        
+        <div>
+            <h3>Contact Information</h3>
+            <p>Phone: 9356167977</p>
+            <p>Email: sybca@greenhavennursery.com</p>
+            <p>Address: 123 Green Street, Plantville, PL 12345</p>
+        </div>
+    </div>
+    
+    <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form">
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div>
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="customer-support">Customer Support</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="technical">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit">Send Message</button>
+</body>
+</html>

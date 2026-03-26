@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Customer Reviews Section -->
+ <section id="reviews">
+    <h2>Customer Reviews</h2>
+    
+    <div class="review">
+        <h3>Samir Sonawane</h3>
+        <div class="rating">
+            <span>★★★★★</span>
+        </div>
+        <p>The green haven nursury's plants are so fresh and good. Highly recommended!</p>
+    </div>
+    
+    <div class="review">
+        <h3>Prajwal Gorde</h3>
+        <div class="rating">
+            <span>★★★★☆</span>
+        </div>
+        <p>Great Nursury for Small plants of fruits. The customer management features have helped us increase repeat business by 30%. Would love to see more reporting features in future updates.</p>
+    </div>
+    
+    <div class="review">
+        <h3>Onkar Wakchaure</h3>
+        <div class="rating">
+            <span>★★★★★</span>
+        </div>
+        <p>As a nursery manager, I appreciate how easy it is to train new staff on this system. The plant care reminders have reduced our plant loss significantly. Worth every penny!</p>
+    </div>
+    
+    <div class="submit-review">
+        <h3>Leave Your Review</h3>
+        <form id="review-form">
+            <div>
+                <label for="reviewer-name">Your Name:</label>
+                <input type="text" id="reviewer-name" name="reviewer-name" required>
+            </div>
+            
+            <div>
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
